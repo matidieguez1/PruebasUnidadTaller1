@@ -14,7 +14,6 @@ public class Colaborador extends Usuario
         super(nombreApe, email,telefono,"Colaborador",nombreUsuario,contraseña,base);
     }
 
-
     public Colaborador()
     {
         super();
