@@ -31,7 +31,11 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
+
+                  
+
                   <url path="../Facultad/Cuarto año/Segundo Cuatrimestre/Taller de Programacion I/junit-4.10.jar" jar-entry=""/>
+
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Junit-4.10.jar"/>
@@ -47,6 +51,8 @@
          </hash>
       </list>
    </hash>
+
+
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="ApplicationSrcContentSet">
          <list n="pattern-filters">
@@ -57,4 +63,5 @@
          </list>
       </hash>
    </hash>
+
 </jws:workspace>

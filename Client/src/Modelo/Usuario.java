@@ -53,7 +53,7 @@ public class Usuario extends Observable
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.base=base;
-        this.verificaInvariante();
+       // this.verificaInvariante();
     }
     
     /**

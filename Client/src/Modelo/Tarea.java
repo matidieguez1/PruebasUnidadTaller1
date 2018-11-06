@@ -48,7 +48,7 @@ public class Tarea
         this.estado=new AbiertaState(this);
         num+=1;
         this.ID=num;
-        this.verificaInvariante();
+       // this.verificaInvariante();
     }
 
     /**
