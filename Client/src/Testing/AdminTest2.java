@@ -10,6 +10,10 @@ import Modelo.Servicio;
 
 import Modelo.Tarea;
 
+import java.util.ArrayList;
+
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -102,7 +106,7 @@ public class AdminTest2 {
         int id =1;
         Grupo_de_Clientes grupo=new Grupo_de_Clientes("nombre",id);
         this.fixture2.admin.eliminarGrupo(grupo);
-        assertFalse("No elimino correctamente",this.fixture2.base.getGrupos().containsKey(id));
+        assertFalse("No elimino correctamente",this.fixture2.base.getGrupos().containsValue(grupo));
     }
     /**
      * Eliminar grupo no existente.
@@ -111,10 +115,10 @@ public class AdminTest2 {
     public void testEliminar_Grupo2()
     {
         Grupo_de_Clientes grupo=new Grupo_de_Clientes("nombre2",2);
+        int cant= this.fixture2.base.getGrupos().size();
         this.fixture2.admin.eliminarGrupo(grupo);
-        /**preguntar que assert usar o fail
-         */
-        assertFalse("No elimino correctamente",this.fixture2.base.getGrupos().containsKey(2));
+        assertTrue("Elimino un grupo no existente",cant==this.fixture2.base.getGrupos().size());
+        
     }
     /**
      * Agrega un servicio existente.
@@ -211,5 +215,47 @@ public class AdminTest2 {
             String s="No existe el cliente";
             assertEquals("Lanzo una excepcion distinta a la esperada",s,e.getMessage());
         }
+    }
+    
+    /**
+     * Pedir informe de todos los colaboradores.
+     */
+    @Test
+    public void test_informeEstadoTareas1()
+    {
+        ArrayList<String[]>informe=this.fixture2.admin.informeEstadoTareas("todos");
+        assertTrue("No informo correctamente",informe.size()==2);
+        //NUNCA SE ASIGAN EL SERVICIO EN EL CONSTRUCTOR DE TAREA
+    }
+    /**
+     * Pedir informe de 1 colaborador existente.
+     */
+    @Test
+    public void test_informeEstadoTareas2()
+    {
+       ArrayList<String[]>informe= this.fixture2.admin.informeEstadoTareas("nombreUsuario");
+        assertTrue("No informo correctamente",informe.size()==1);
+        //COMPARA UN OBJETO COLABORADOR CON UN STRING
+        
+    }
+    /**
+     * Pedir informe de 1 colaborador no existente.
+     */
+    @Test
+    public void test_informeEstadoTareas3()
+    {
+       ArrayList<String[]>informe= this.fixture2.admin.informeEstadoTareas("nombreUsuario22222222");
+        assertTrue("No informo correctamente",informe.size()==0);
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void test_InformeTareasPeriodo()
+    {
+        Date inicio=new Date();
+        Date fin= new Date();
+        //Hacer, fijarse que ingresando ciertos Dates , se obtenga el resultado esperado.
     }
 }

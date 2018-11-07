@@ -37,7 +37,7 @@ public class ColaboradorTest1
     public void testAgregar_tarea() {
        try
           {
-            HashMap usuarios = fixture1.bddTest.getListaUsuarios();
+            HashMap usuarios = fixture1.base.getListaUsuarios();
            
             fail("agregar sinonimo nulo no dispara excepcion.");
           }

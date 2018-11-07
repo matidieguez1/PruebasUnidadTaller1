@@ -33,11 +33,11 @@ public class AdminTestFixture2 {
             usuario2.agregarTarea(2, cliente, servicio);
         } catch (GeneralException e) {
         }
-
+    int id =1;
         this.base.getListaUsuarios().put("nombreUsuario", usuario1);
         this.base.getListaUsuarios().put("nombreUsuario2", usuario2);
         this.base.getClientes().put("nom", cliente);
-        this.base.getGrupos().put(1, new Grupo_de_Clientes("nombre",1));
+        this.base.getGrupos().put(id, new Grupo_de_Clientes("nombre",id));
         this.base.getServicios().put("descripcion",servicio);
         
     }
