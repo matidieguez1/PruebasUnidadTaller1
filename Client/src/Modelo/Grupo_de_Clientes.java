@@ -25,7 +25,7 @@ public class Grupo_de_Clientes
     {
         this.nombre = nombre;
         this.ID = ID;
-        this.verificarInvariante();
+       // this.verificarInvariante();
     }
     
     /**
