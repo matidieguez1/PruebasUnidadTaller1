@@ -48,7 +48,7 @@ public class Tarea
         this.estado=new AbiertaState(this);
         num+=1;
         this.ID=num;
-       // this.verificaInvariante();
+       //this.verificaInvariante();
     }
 
     /**
@@ -58,7 +58,7 @@ public class Tarea
     public void setColaborador(Colaborador colaborador)
     {
         this.colaborador = colaborador;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public Colaborador getColaborador()
@@ -73,7 +73,7 @@ public class Tarea
     public void setCliente(Cliente cliente)
     {
         this.cliente = cliente;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public Cliente getCliente()
@@ -88,7 +88,7 @@ public class Tarea
     public void setServicio(Servicio servicio)
     {
         this.servicio = servicio;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public Servicio getServicio()
@@ -103,7 +103,7 @@ public class Tarea
     public void setFechaInicio(Date fechaInicio)
     {
         this.fechaInicio = fechaInicio;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public Date getFechaInicio()
@@ -132,7 +132,7 @@ public class Tarea
     public void setEstado(IState estado)
     {
         this.estado = estado;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public IState getEstado()
@@ -147,7 +147,7 @@ public class Tarea
     public void setCostoTotal(double costoTotal)
     {
         this.costoTotal = costoTotal;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public double getCostoTotal()
@@ -176,7 +176,7 @@ public class Tarea
     public void setID(int ID)
     {
         this.ID = ID;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     public int getID()

@@ -1,34 +1,27 @@
 package Testing;
 
-import Modelo.AbiertaState;
 import Modelo.BaseDeDatos;
 import Modelo.CerradaState;
 import Modelo.Cliente;
 import Modelo.Colaborador;
-
-import Modelo.GeneralException;
 import Modelo.Grupo_de_Clientes;
-import Modelo.IState;
 import Modelo.PausadaState;
 import Modelo.Servicio;
-
 import Modelo.Tarea;
 
-import java.util.ArrayList;
-
-public class ColaboradorTestFixture2
+public class ColaboradorTestFixture3
 {
     BaseDeDatos base = new BaseDeDatos();
     Colaborador colTest = new Colaborador("nombreApe", "email","telefono","Colaborador","nombreUsuario","contraseña",this.base);
 
-    public ColaboradorTestFixture2()
+    public ColaboradorTestFixture3()
     {
         super();
     }
     
     public void setUp()
     {
-        //EL COLABORADOR TIENE UNA TAREA ABIERTA.
+        //EL COLABORADOR NO TIENE TAREAS ABIERTAS.
         
         Cliente cliente=new Cliente("nom","email","000000000000","cuit","razonsocial","grupoclientes");
         Servicio servicio = new Servicio("descripcion","tipo",1.0);
@@ -37,6 +30,7 @@ public class ColaboradorTestFixture2
         Tarea tarea2 = new Tarea(this.colTest,cliente,servicio);
         Tarea tarea3 = new Tarea(this.colTest,cliente,servicio);
         
+        tarea1.setEstado(new PausadaState(tarea1));
         tarea2.setEstado(new PausadaState(tarea2));
         tarea3.setEstado(new CerradaState(tarea3));
               

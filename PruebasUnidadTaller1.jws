@@ -31,7 +31,7 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../../Users/Juan Cruz Sanchez/Desktop/Facultad/Taller de programacion/junit-4.10.jar" jar-entry=""/>
+                  <url path="../Facultad/Cuarto año/Segundo Cuatrimestre/Taller de Programacion I/junit-4.10.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Junit-4.10.jar"/>

@@ -5,9 +5,9 @@ import Modelo.Colaborador;
 
 public class ColaboradorTestFixture1
 {
-    
     BaseDeDatos base = new BaseDeDatos();
     Colaborador colTest = new Colaborador("nombreApe", "email","telefono","Colaborador","nombreUsuario","contraseña",this.base);
+ 
     public ColaboradorTestFixture1()
     {
         super();

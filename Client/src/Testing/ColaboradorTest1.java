@@ -1,12 +1,14 @@
 package Testing;
 
-import java.util.HashMap;
+import Modelo.Cliente;
+import Modelo.Servicio;
 
 import org.junit.After;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
+
 
 public class ColaboradorTest1
 {
@@ -32,22 +34,48 @@ public class ColaboradorTest1
     /**
       * agregar una tarea con la lista de tareas vacias
     */
-    
     @Test
     public void testAgregar_tarea() {
        try
           {
-            HashMap usuarios = fixture1.base.getListaUsuarios();
-           
-            fail("agregar sinonimo nulo no dispara excepcion.");
+            Cliente cliente=new Cliente("nom","email","000000000000","cuit","razonsocial","grupoclientes");
+            Servicio servicio = new Servicio("descripcion","tipo",1.0);
+            
+            this.fixture1.colTest.agregarTarea(1, cliente, servicio);
+            
+            assertTrue("No agrego correctamente la tarea",this.fixture1.colTest.getTareas().size() == 1);
           }
           catch( final Exception e )
           {
-    /*      Nota : La excepcion debe ser la correspondiente al mensaje */
-            final String msg = "Sinonimo Invalido";
-            assertEquals("No genera la excepcion de Sinonimo Invalido",msg, e.getMessage());
+            fail("No deberia lanzar ninguna excepcion");
           }
-        
      }
+    
+    /**
+     *  Abrir tarea estando abierta
+     */
+    @Test
+    public void test_AbrirTarea1()
+    {
+       
+    }
+    
+    /**
+     *  Abrir tarea estando pausada
+     */
+    @Test
+    public void test_AbrirTarea2()
+    {
+        
+    }
+    
+    /**
+     *  Abrir tarea estando cerrada
+     */
+    @Test
+    public void test_AbrirTarea3()
+    {
+        
+    }
     
 }

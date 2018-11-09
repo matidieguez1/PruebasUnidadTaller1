@@ -18,7 +18,7 @@ public class AbiertaState implements IState
     public AbiertaState(Tarea tarea)
     {
         this.tarea=tarea;
-        this.verificaInvariante();
+        //this.verificaInvariante();
     }
 
     @Override
