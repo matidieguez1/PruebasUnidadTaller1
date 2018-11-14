@@ -7,6 +7,7 @@ import Modelo.Colaborador;
 import Modelo.GeneralException;
 import Modelo.Grupo_de_Clientes;
 import Modelo.Servicio;
+import Modelo.Tarea;
 import Modelo.Usuario;
 /**
  * Escenario con base de datos llena.
@@ -25,14 +26,20 @@ public class AdminTestFixture2 {
         Cliente cliente=new Cliente("nom","email","000000000000","cuit","razonsocial","grupoclientes");
         Servicio servicio = new Servicio("descripcion","tipo",1.0);
 
-        try {
+       /*try {
             usuario1.agregarTarea(1, cliente, servicio);
         } catch (GeneralException e) {
         }
         try {
             usuario2.agregarTarea(2, cliente, servicio);
         } catch (GeneralException e) {
-        }
+        }*/
+        Tarea tarea1 = new Tarea(usuario1,cliente,servicio);                      
+        Tarea tarea2 = new Tarea(usuario2,cliente,servicio);
+        
+        usuario1.getTareas().put(1, tarea1);
+        usuario1.getTareas().put(2, tarea2);
+        
     int id =1;
         this.base.getListaUsuarios().put("nombreUsuario", usuario1);
         this.base.getListaUsuarios().put("nombreUsuario2", usuario2);

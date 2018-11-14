@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class ColaboradorTest1
 {
     ColaboradorTestFixture1 fixture1 = new ColaboradorTestFixture1();
-    
+
     public ColaboradorTest1()
     {
         super();
@@ -26,56 +26,35 @@ public class ColaboradorTest1
     }
 
     @After
-    public void tearDown() 
+    public void tearDown()
     {
         fixture1.tearDown();
     }
-    
+
     /**
-      * agregar una tarea con la lista de tareas vacias
-    */
+     * agregar una tarea con la lista de tareas vacias
+     */
     @Test
-    public void testAgregar_tarea() {
-       try
-          {
-            Cliente cliente=new Cliente("nom","email","000000000000","cuit","razonsocial","grupoclientes");
-            Servicio servicio = new Servicio("descripcion","tipo",1.0);
-            
-            this.fixture1.colTest.agregarTarea(1, cliente, servicio);
-            
-            assertTrue("No agrego correctamente la tarea",this.fixture1.colTest.getTareas().size() == 1);
-          }
-          catch( final Exception e )
-          {
+    public void testAgregar_tarea()
+    {
+        try
+        {
+            Cliente cliente = new Cliente("nom", "email", "000000000000", "cuit", "razonsocial", "grupoclientes");
+            Servicio servicio = new Servicio("descripcion", "tipo", 1.0);
+
+            this.fixture1
+                .colTest
+                .agregarTarea(1, cliente, servicio);
+
+            assertTrue("No agrego correctamente la tarea", this.fixture1
+                                                               .colTest
+                                                               .getTareas()
+                                                               .size() == 1);
+        } catch (final Exception e)
+        {
             fail("No deberia lanzar ninguna excepcion");
-          }
-     }
-    
-    /**
-     *  Abrir tarea estando abierta
-     */
-    @Test
-    public void test_AbrirTarea1()
-    {
-       
+        }
     }
-    
-    /**
-     *  Abrir tarea estando pausada
-     */
-    @Test
-    public void test_AbrirTarea2()
-    {
-        
-    }
-    
-    /**
-     *  Abrir tarea estando cerrada
-     */
-    @Test
-    public void test_AbrirTarea3()
-    {
-        
-    }
-    
+
+
 }

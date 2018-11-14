@@ -155,6 +155,7 @@ public class AdminTest2 {
     /**
      * Elimina un servicio que no esta.
      */
+    @Test
     public void testEliminar_Servicio2()
     {
         try {
